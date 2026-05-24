@@ -1,0 +1,182 @@
+Analizador de Reglas de Acceso
+==================================
+Fecha y Hora de Simulacion: 2026-05-20 04:20:25
+==================================
+Procesando archivo: pruebas.txt
+-----------------------------------
+[Linea 1] Evaluando texto: "user admin AND hour >= 9 AND hour <= 17"
+-----------------------------------
+Analizando Usuario: admin
+      [Op: >=]    🔹 Condición de hora: 9
+      [Op: <=]    🔹 Condición de hora: 17
+  ↳ Operación lógica: AND
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 2] Evaluando texto: "user guest AND NOT resource = 'config.xml'"
+-----------------------------------
+Analizando Usuario: guest
+      [Op: =]    🔹 Condición de recurso: 'config.xml'
+  ↳ Operación lógica: NOT
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 3] Evaluando texto: "user operator AND day = 'Monday'"
+-----------------------------------
+Analizando Usuario: operator
+      [Op: =]    🔹 Condición de día: 'Monday'
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 4] Evaluando texto: "user admin"
+-----------------------------------
+Analizando Usuario: admin
+✓ Tipo: Solo usuario -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 5] Evaluando texto: "user guest"
+-----------------------------------
+Analizando Usuario: guest
+✓ Tipo: Solo usuario -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 6] Evaluando texto: "user operator"
+-----------------------------------
+Analizando Usuario: operator
+✓ Tipo: Solo usuario -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 7] Evaluando texto: "user admin AND hour >= 9"
+-----------------------------------
+Analizando Usuario: admin
+      [Op: >=]    🔹 Condición de hora: 9
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 8] Evaluando texto: "user guest AND day = 'Monday'"
+-----------------------------------
+Analizando Usuario: guest
+      [Op: =]    🔹 Condición de día: 'Monday'
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 9] Evaluando texto: "user operator AND resource = 'database_1'"
+-----------------------------------
+Analizando Usuario: operator
+      [Op: =]    🔹 Condición de recurso: 'database_1'
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 10] Evaluando texto: "user admin AND NOT hour < 8"
+-----------------------------------
+Analizando Usuario: admin
+      [Op: <]    🔹 Condición de hora: 8
+  ↳ Operación lógica: NOT
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 11] Evaluando texto: "user guest AND (day = 'Friday' OR hour <= 12)"
+-----------------------------------
+Analizando Usuario: guest
+      [Op: =]    🔹 Condición de día: 'Friday'
+      [Op: <=]    🔹 Condición de hora: 12
+  ↳ Operación lógica: OR
+  ↳ Grupo entre paréntesis ( )
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 12] Evaluando texto: "user admin AND"
+-----------------------------------
+Analizando Usuario: admin
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 13] Evaluando texto: "user"
+-----------------------------------
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 14] Evaluando texto: "guest AND hour > 10"
+-----------------------------------
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 15] Evaluando texto: "user admin hour >= 9"
+-----------------------------------
+Analizando Usuario: admin
+✓ Tipo: Solo usuario -> Regla válida
+
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 16] Evaluando texto: "user guest AND day = Monday"
+-----------------------------------
+Analizando Usuario: guest
+      [Op: =]Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 17] Evaluando texto: "user operator AND resource != 'auth' OR"
+-----------------------------------
+Analizando Usuario: operator
+      [Op: !=]    🔹 Condición de recurso: 'auth'
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 18] Evaluando texto: "user admin AND (hour > 8 AND day = 'Monday'"
+-----------------------------------
+Analizando Usuario: admin
+      [Op: >]    🔹 Condición de hora: 8
+      [Op: =]    🔹 Condición de día: 'Monday'
+  ↳ Operación lógica: AND
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+[Linea 19] Evaluando texto: "user guest AND hour >= 9 $"
+-----------------------------------
+Analizando Usuario: guest
+      [Op: >=]    🔹 Condición de hora: 9
+Carácter desconocido ignorado en línea 1: $
+✓ Tipo: Usuario con condiciones -> Regla válida
+
+  ↳ Result: ✓ REGLA VALIDA (Estructura aprobada)
+===================================
+
+[Linea 20] Evaluando texto: "user admin AND resource = 'panel' AND NOT"
+-----------------------------------
+Analizando Usuario: admin
+      [Op: =]    🔹 Condición de recurso: 'panel'
+Error de Sintaxis: La estructura de esta regla es inválida.
+===================================
+
+-----------------------------------
+El análisis finalizó con errores estructurales.
+
+-----------------------------------
+RESUMEN DEL ANALISIS SINTACTICO
+-----------------------------------
+Reglas Sintacticamente Correctas: 12
+Reglas con Error Estructural:      8
+Total de casos procesados:         20
+===================================

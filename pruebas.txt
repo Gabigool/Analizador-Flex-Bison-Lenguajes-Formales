@@ -1,0 +1,20 @@
+user admin AND hour >= 9 AND hour <= 17
+user guest AND NOT resource = 'config.xml'
+user operator AND day = 'Monday'
+user admin
+user guest
+user operator
+user admin AND hour >= 9
+user guest AND day = 'Monday'
+user operator AND resource = 'database_1'
+user admin AND NOT hour < 8
+user guest AND (day = 'Friday' OR hour <= 12)
+user admin AND
+user
+guest AND hour > 10
+user admin hour >= 9
+user guest AND day = Monday
+user operator AND resource != 'auth' OR
+user admin AND (hour > 8 AND day = 'Monday'
+user guest AND hour >= 9 $
+user admin AND resource = 'panel' AND NOT
